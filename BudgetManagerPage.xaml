@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProjectMaui.BudgetManagerPage"
+             Title="Budget Manager">
+    <StackLayout Padding="20">
+        <Label Text="Budget Manager" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+        <Label x:Name="spendingMeter" TextColor="PaleGreen" FontSize="Small" Margin="0,10,0,0" />
+
+
+        <!-- Budget input -->
+        <Entry x:Name="budgetEntry" Placeholder="Enter Budget" Keyboard="Numeric" />
+        
+        <Entry x:Name="expenseEntry" Placeholder="Enter Expense" Keyboard="Numeric" />
+        <Button Text="Add Expense" Clicked="AddExpense_Clicked" Margin="0,10,0,0" />
+
+        <ListView x:Name="expenseListView" Margin="0,20,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Warning label -->
+        <Label x:Name="warningLabel" TextColor="Red" Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>
