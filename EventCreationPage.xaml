@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProjectMaui.EventCreationPage"
+             Title="Event Creation Interface ">
+    <StackLayout Padding="20">
+        <Label Text="Create Events" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+
+        <Entry x:Name="eventNameEntry" Placeholder="Event Name" />
+        <Entry x:Name="eventDescriptionEntry" Placeholder="Event Description" />
+        <Entry x:Name="availableSlotsEntry" Placeholder="Available Slots" Keyboard="Numeric" />
+
+        <Button Text="Create Event" Clicked="CreateEvent_Clicked" Margin="0,20,0,0" />
+        <Button Text="Back to Event List" Clicked="BackToEventList_Clicked" Margin="0,20,0,0" />
+
+
+        <Picker x:Name="eventStatusPicker" Title="Event Status">
+            <Picker.Items>
+                <x:String>Pending</x:String>
+                <x:String>Ongoing</x:String>
+                <x:String>Completed</x:String>
+            </Picker.Items>
+        </Picker>
+
+
+    </StackLayout>
+    
+    
+    
+</ContentPage>
