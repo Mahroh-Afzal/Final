@@ -1,0 +1,42 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProjectMaui.EventCreationPage"
+             Title="Event Creation Interface ">
+    <StackLayout Padding="20">
+            <Button x:Name ="UtilBut" Text="Create Event" Clicked="OnClick" Margin="0,20,0,0" />
+        <VerticalStackLayout x:Name="DefaultView" IsVisible="true" Margin="20">
+        <Button  Text="Go Back" Clicked="BackToEventList_Clicked" Margin="0,20,0,0" />
+                 <ScrollView>
+                     <TableView x:Name="EventView"  Intent="Data">
+                         <TableRoot>
+                             <TableSection Title="Events">
+
+                             </TableSection>
+                         </TableRoot>
+                     </TableView>
+                 </ScrollView>
+        </VerticalStackLayout>
+
+
+        <VerticalStackLayout x:Name="CreateEventView" IsVisible="False">
+            <Label Text="Create Events" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+            <Entry x:Name="eventNameEntry" Placeholder="Event Name" />
+                <Entry x:Name="eventDescriptionEntry" Placeholder="Event Description" />
+                <Entry x:Name="availableSlotsEntry" Placeholder="Available Slots" Keyboard="Numeric" />
+                <Picker x:Name="eventStatusPicker" Title="Event Status">
+                    <Picker.Items>
+                        <x:String>Pending</x:String>
+                        <x:String>Ongoing</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Text="Create Event" Clicked="CreateEvent_Clicked" Margin="0,20,0,0" />
+                
+
+
+
+            </VerticalStackLayout>
+    </StackLayout>
+
+</ContentPage>

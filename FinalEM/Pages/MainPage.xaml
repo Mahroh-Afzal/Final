@@ -1,0 +1,71 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProjectMaui.MainPage"
+             Title="Event Management and Booking System">
+        <StackLayout Padding="20">
+            <VerticalStackLayout x:Name ="LoginField" IsVisible="True">
+                <Label 
+            Text="Login into your account"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            Margin="20"/>
+
+
+                <Entry
+            x:Name="usernameEntry"
+            Placeholder="Username"
+            Margin="0,0,0,10"/>
+
+                <Entry 
+            x:Name="passwordEntry"
+            Placeholder="Password"
+            IsPassword="True"/>
+
+                <Button 
+            Text="Login"
+            Clicked="OnLoginClicked"
+            Margin="0,0,0,20"/>
+
+                <Button 
+            Text = "Don't have an account? Sign up"
+            Clicked="RegisterPageButton_Clicked"
+            x:Name="RegisterPageButton"/>
+
+            </VerticalStackLayout>
+            <Label x:Name ="CurrentTask" Text="CURRENT TASK: " IsVisible ="False"/>
+            <VerticalStackLayout x:Name="AdminField" IsVisible ="False">
+                <Label x:Name ="UserLabel" Text="Hello "/>
+                <TableView x:Name="OptionTable"  Intent="Menu">
+                    <TableRoot>
+                        <TableSection Title="Options">
+                            <TextCell Text="Manage Budget"
+                      Tapped="Budget"/>
+                            <TextCell Text="Event Manager"
+                      Tapped="EventManageOnClick"/>
+                            <TextCell Text="Assign Tasks"
+                      Tapped="AssignTasks"/>
+                            <TextCell Text="Log Out"
+                      Tapped="GoBack"/>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+
+            </VerticalStackLayout>
+            <VerticalStackLayout x:Name="TaskField" IsVisible="False">
+                <Button Text = "Back to Options" Clicked="Back"/>
+                <Entry x:Name="Name" Placeholder="John" Completed ="update"/>
+                <Entry x:Name="Task" Placeholder="Prep Sound Rig"/>
+                <Button x:Name ="TaskButton" Text = "Assign Task" Clicked="Assign" />
+                <ScrollView>
+                <TableView x:Name="UserView"  Intent="Data">
+                    <TableRoot>
+                        <TableSection Title="Admins">
+
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+                </ScrollView>
+            </VerticalStackLayout>
+        </StackLayout>
+</ContentPage>
